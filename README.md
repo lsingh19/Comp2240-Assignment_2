@@ -2,9 +2,9 @@
 **_Mark_**: 100 / 100 
 
 ## Comments by Marker
-Marks: 
-I/O (valid input and output) : 5/5
-Code Clarity (code structure, code comments) : 10/10 
+**Marks**:       
+I/O (valid input and output) : 5/5   
+Code Clarity (code structure, code comments) : 10/10    
  
 **_Problems_**:     
 A: Sharing the Bridge : 30/30   
@@ -47,3 +47,25 @@ Where each line, except the last, contains information regarding a customer
 Arrival-time Customer-ID Ice-cream-eating-time  
 Input ends with a line containing the word END. You can assume that in the input the customers will be sorted in order of their arrival times.  
 Output shows information of each customer in a separate line. Each line contains Customer-ID, Arrival-time, time when the customer seats in the icecream parlour and time when the customer leaves the parlour. 
+
+### Problem C : Hot or Iced Coffee ?? 
+School of EEC, the University bought a coffee machine that can serve both iced and hot coffee for the staffs. The coffee machine has TWO dispensing heads which can serve TWO clients (staffs) in parallel. We call a staff Hot Client (H) if (s)he is looking for hot coffee and a Cold Client (C) if (s)he is looking for cold coffee. However, the machine can operate in either of its two modes (hot or cold drink) at a time. If a Hot Client has started to make coffee in the machine then the other vacant disperser can serve hot coffee only – a Cold Client must wait.  A client (Hot or Cold) can choose the brew strength by choosing the brew time at the beginning. So the assumptions in operating the coffee machine are 
+- Hot and Cold clients cannot use the machine at the same time.   
+- No more than TWO clients can use the machine simultaneously.   
+- Each client can choose different time to brew his coffee.     
+ 
+Using **monitor**, design and implement an algorithm that ensures the operation of the coffee machine according to the above characteristics. Use threads to simulate multiple/concurrent clients. Your solution should be fair – stream of Hot Clients should not prevent a Cold Client from using the coffee machine or vice versa. A Hot Client with ID y (i.e. Hy) should not be served before a HOT Client with ID x (i.e. Hx) where x < y. And the same for the cold clients.  The input will be as follows:      
+- 9     
+- H1 5     
+- H2 2
+
+Where the first line contains the number of clients looking for coffee and each line contains information about each client of the form   
+Client-ID   Brew-Time    
+Client-ID: The first character is H or C indicating hot (H) or cold (C) coffee client, a number (without no blank in-between) indicating the client ID in each group. Client-IDs are unique. Brew-Time: The time to brew his coffee. The order of clients in the input file indicates the order in which they arrived for coffee.    
+The output should be as follows:  
+- (0) H1 uses dispenser 1 (time: 5)    
+- (0) H2 uses dispenser 2 (time: 2)   
+- (2) H3 uses dispenser 2 (time: 3)   
+
+
+Each line contains information about the usage of the coffee machine by a client. First, the time the client starts using the coffee machine in parenthesis. Then his Client-ID the disperser number in which he is operating and his brew time in parenthesis. Last line shows the time to serve all the clients. 
